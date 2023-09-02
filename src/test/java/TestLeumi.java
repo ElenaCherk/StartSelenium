@@ -9,6 +9,7 @@ import static java.awt.SystemColor.text;
 
 public class TestLeumi {
 
+
     WebDriver wd;
     @BeforeMethod
     public void precondition(){
