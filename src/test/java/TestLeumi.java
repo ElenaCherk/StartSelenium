@@ -14,7 +14,6 @@ public class TestLeumi {
     public void precondition(){
         wd = new ChromeDriver();
         wd.navigate().to("https://www.leumi.co.il/");
-
     }
     @Test
     public void testCSS() {
@@ -22,7 +21,6 @@ public class TestLeumi {
         String text = wd.findElement(By.linkText("פרטי")).getText();
         Assert.assertEquals(text,"פרטי");
         System.out.println(text);
-
     }
 
     private void pause(int millis) {
