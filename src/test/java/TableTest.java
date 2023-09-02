@@ -24,4 +24,24 @@ import org.testng.annotations.Test;
             Assert.assertEquals(text,"Canada"); //в том месте, которое мы указали локатаром находится элемент с текстом "Canada"
             Assert.assertTrue(text.contains("Can")); // элемент содержит данную последовательность букв
         }
+        @Test
+        public void homeWork(){ //посчитать кол-во строк в таблице (элементы tr в коллекцию и меряем size этой коллекции)
+            System.out.println(
+                    wd.findElements(
+                            By.xpath("//*[@id ='customers']//tr")).size());
+
+            System.out.println( //кол-во заголовков таблицы (th)
+                    wd.findElements(
+                            By.xpath("//*[@id ='customers']//th")).size());
+
+            // ищем локатор на строку 3 (из всех tr нам нужна третья) делаем через cssSelector (для повторения)
+            System.out.println(
+                 wd.findElement(
+                 By.cssSelector("#customers tr:nth-child(3)")).getText());
+
+            // локатор на последнюю колонку (нужен самый последний столбец, без заголовка
+            System.out.println(
+                    wd.findElement(
+                            By.cssSelector("#customers td:last-child")).getText());
+        }
     }
